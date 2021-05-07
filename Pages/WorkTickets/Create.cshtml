@@ -1,0 +1,58 @@
+@page
+@model Final_Project.Pages.WorkTickets.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>WorkTicket</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="WorkTicket.Date" class="control-label"></label>
+                <input asp-for="WorkTicket.Date" class="form-control" />
+                <span asp-validation-for="WorkTicket.Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WorkTicket.Name" class="control-label"></label>
+                <input asp-for="WorkTicket.Name" class="form-control" />
+                <span asp-validation-for="WorkTicket.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WorkTicket.RoomNumber" class="control-label"></label>
+                <input asp-for="WorkTicket.RoomNumber" class="form-control" />
+                <span asp-validation-for="WorkTicket.RoomNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WorkTicket.CampusName" class="control-label"></label>
+                <input asp-for="WorkTicket.CampusName" class="form-control" />
+                <span asp-validation-for="WorkTicket.CampusName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WorkTicket.RequestType" class="control-label"></label>
+                <input asp-for="WorkTicket.RequestType" class="form-control" />
+                <span asp-validation-for="WorkTicket.RequestType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WorkTicket.TechnicianId" class="control-label"></label>
+                <select asp-for="WorkTicket.TechnicianId" class ="form-control" asp-items="ViewBag.TechnicianId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
